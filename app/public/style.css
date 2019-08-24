@@ -1,0 +1,22 @@
+select {
+    display: inline-block;
+}
+
+.center {
+    width: 50%;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.title {
+    text-align: center;
+}
+
+#inner {
+    padding: 5px;
+}
+
+#about-you, #survey {
+    padding: 10px;
+    text-align: left;
+}
