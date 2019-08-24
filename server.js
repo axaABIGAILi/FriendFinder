@@ -10,8 +10,8 @@ var path = require('path');
 // port location
 const port = process.env.PORT || 3030;
 // integrate routes
-//require('./app/routing/apiRoutes');
-require('./app/routing/htmlRoutes');
+require('./app/routing/apiRoutes.js')(app);
+require('./app/routing/htmlRoutes.js')(app);
 
 // basic listener call to activate the server
 app.listen(port, function(){
