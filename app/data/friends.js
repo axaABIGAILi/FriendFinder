@@ -7,7 +7,7 @@ var friends = [
     {
         name: 'Pikachu',
         photo: 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png',
-        scores: [4,3,2,2,2,1,1,4,2,3]
+        scores: [4,3,2,2,2,1,1,5,2,3]
     },
     {
         name: 'Charmander',
