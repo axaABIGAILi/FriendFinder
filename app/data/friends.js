@@ -1,9 +1,7 @@
 /* FRIENDS DATA */
 
-// create variable compatible as an empty array to store objects of compatible friends
-var compatible = [];
 // create array of potential friends
-var friends = [
+exports.friends = [
     {
         name: 'Pikachu',
         photo: 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png',
@@ -60,3 +58,4 @@ var friends = [
         scores: [2,2,1,3,4,1,4,1,3,2]
     }
 ];
+

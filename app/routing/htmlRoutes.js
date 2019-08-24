@@ -10,10 +10,10 @@ const port = 3030;
 
 // get request to send home.html by default
 app.get('/', function(req, res){
-
+    res.sendFile('../public/home.html');
 });
 
 // get request to send survey.html to client
 app.get('/survey', function(req, res){
-
+    res.sendFile('../public/survey.html');
 });
