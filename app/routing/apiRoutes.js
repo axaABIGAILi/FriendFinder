@@ -3,6 +3,9 @@
 // require friends data
 var friends = require('../data/friends');
 
+// empty array for user data
+var userData = [];
+
 // export API routes methods
 module.exports = function(app) {
     
@@ -12,10 +15,11 @@ module.exports = function(app) {
     });
 
     // post to handle incoming data
-    /*app.post('/api/friends', function(req, res){
-        /* CODE TO HANDLE INCOMING DATA AND POST TO DATABASE + HANDLE COMPATABILITY LOGIC
+    app.post('/api/friends', function(req, res){
+        /* CODE TO HANDLE INCOMING DATA AND POST TO DATABASE + HANDLE COMPATABILITY LOGIC*/
 
-    });*/
+
+    });
 }
 
 
