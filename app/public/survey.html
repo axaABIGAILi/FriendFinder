@@ -151,7 +151,7 @@
         };
         // function to display the friend
         $('#surveySub').on('click', function(){
-            var n = $('#name').val();
+            var n = $('#name').val().trim();
             var img = $('#photo').val();
             var arr = [];
             for (var i=1; i <= 10; i++) {
@@ -163,6 +163,7 @@
                 .done(function(data){
                     $('#pokeimg').attr('src',data.friendImage);
                     $('#matchedpoke').html(data.friendName);
+                    $('.modal').modal(open);
                 })
         });
     </script>
