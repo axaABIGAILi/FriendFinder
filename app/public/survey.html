@@ -120,6 +120,19 @@
                     <li><a href="/api/friends">Friends API</a></li>
                 </ul>
         </div></nav>
+        <!--modal-->
+        <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <h4>Your matched friend!</h4>
+                    <img id="pokeimg" src="" style="width: 50%;">
+                    <p id="matchedpoke"></p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Ok</a>
+                </div>
+                </div>
+
+
     <!--integration of jQuery to allow use of AJAX methods-->
     <script
     src="https://code.jquery.com/jquery-3.4.1.js"
@@ -130,15 +143,28 @@
     crossorigin="anonymous"></script>
     <!--inbuilt script to make the ajax call and display friend upon submit-->
     <script>
+        // user object constructor
+        function userInfo (n, img, arr) {
+            this.name = n;
+            this.image = img;
+            this.scores = [arr]
+        };
         // function to display the friend
-            var url = window.location.origin;
-            $.ajax({
-                url: url+'/api/userData',
-                method: 'GET'
-            }).then(function(data){
-                // fetches the most recent user input
-                console.log(data)
-            })
+        $('#surveySub').on('click', function(){
+            var n = $('#name').val();
+            var img = $('#photo').val();
+            var arr = [];
+            for (var i=1; i <= 10; i++) {
+                arr.push($('#q'+i).val());
+            }
+            var user = new userInfo (n, img, arr);
+            // push the request body into the userData array
+            $.post('/api/userData', user)
+                .done(function(data){
+                    $('#pokeimg').attr('src',data.friendImage);
+                    $('#matchedpoke').html(data.friendName);
+                })
+        });
     </script>
     </body>
 </html>
