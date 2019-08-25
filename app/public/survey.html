@@ -164,7 +164,7 @@
             var user = new userInfo (n, img, arr);
             console.log(user);
             // push the request body into the userData array
-            $.post('/api/userData', user)
+            $.post('/api/friends', user)
                 .done(function(data){
                     $('#pokeimg').attr('src',data.friendImage);
                     $('#matchedpoke').html(data.friendName);
