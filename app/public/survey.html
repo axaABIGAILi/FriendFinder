@@ -12,9 +12,9 @@
             <img src="https://66.media.tumblr.com/5e19baccfce8144dc612d667f0705dea/tumblr_nmhttagLlB1rcgdmto1_500.gif">
             <div id="about-you">
                 <h3>What's your name?</h3>
-                <p><input class="info-input" placeholder="Name" type="text" name="name">
+                <p><input class="info-input" placeholder="Name" type="text" id="name">
                 <span class="helper-text" data-error="wrong" data-success="right">Required</span></p>
-                <p><input class="info-input" placeholder="Image URL" type="text" name="photo">
+                <p><input class="info-input" placeholder="Image URL" type="text" id="photo">
                 <span class="helper-text" data-error="wrong" data-success="right">Required</span></p>     
             </div>
             <hr>
@@ -111,13 +111,34 @@
                         <option value="5">5 (Strongly Agree)</option>
                     </select>
             </div>
-            <button type="submit">Submit!</button>
+            <button type="submit" id="surveySub">Submit!</button>
         </div>
         <nav><div class="nav-wrapper red darken-2">
+                <a href="#" class="brand-logo right">Poké Finder </a>
                 <ul class="left red darken-2">
                     <li><a href="/">Home</a></li>
                     <li><a href="/api/friends">Friends API</a></li>
                 </ul>
         </div></nav>
+    <!--integration of jQuery to allow use of AJAX methods-->
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script><script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+    <!--inbuilt script to make the ajax call and display friend upon submit-->
+    <script>
+        // function to display the friend
+            var url = window.location.origin;
+            $.ajax({
+                url: url+'/api/userData',
+                method: 'GET'
+            }).then(function(data){
+                // fetches the most recent user input
+                console.log(data[data.length-1])
+            })
+    </script>
     </body>
 </html>
