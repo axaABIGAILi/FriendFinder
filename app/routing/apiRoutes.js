@@ -14,6 +14,10 @@ module.exports = function(app) {
         return res.json(friends.friends)
     });
 
+    app.get('/api/userData', function(req, res){
+        return res.json(userData)
+    });
+
     // post to handle incoming data
     app.post('/api/userData', function(req, res){
         /* CODE TO HANDLE INCOMING DATA AND POST TO DATABASE + HANDLE COMPATABILITY LOGIC*/        

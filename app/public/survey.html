@@ -2,7 +2,8 @@
     <head>
         <meta charset="UTF-8">
         <title>Friend Finder Survey</title>
-        <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">-->
+        <!-- COMMENTED OUT MATERIALIZE BECAUSE DROPDOWNS WOULD NOT DISPLAY W/ MATERIALIZECSS ON LOCALHOST OR HEROKU DEPLOYMENT
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">-->
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
@@ -158,9 +159,10 @@
             var img = $('#photo').val();
             var arr = [];
             for (var i=1; i <= 10; i++) {
-                arr.push($('#q'+i).val());
+                arr.push(parseInt($('#q'+i).val()));
             }
             var user = new userInfo (n, img, arr);
+            console.log(user);
             // push the request body into the userData array
             $.post('/api/userData', user)
                 .done(function(data){
