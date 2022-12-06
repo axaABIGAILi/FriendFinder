@@ -4,7 +4,7 @@
   "description": "Get matched up with the perfect Pokémon to accompany you on your journey to be the very best!",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.18.2"
   },
   "devDependencies": {},
   "scripts": {
